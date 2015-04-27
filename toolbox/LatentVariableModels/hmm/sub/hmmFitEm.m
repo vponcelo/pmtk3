@@ -210,7 +210,7 @@ function model = initDiscrete(model, data, restartNum, emissionPrior)
 d                = size(data{1}, 1);
 model.d          = d;
 nstates          = model.nstates;
-nObsStates       = max(cell2mat(data'));
+nObsStates       = max(cell2mat(data')); %max(nunique(cell2mat(data'))); 
 model.nObsStates = nObsStates; 
 if isempty(model.emission) || isempty(model.pi) || isempty(model.A)
     if restartNum == 1
